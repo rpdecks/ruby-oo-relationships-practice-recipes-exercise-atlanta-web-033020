@@ -11,18 +11,18 @@ We've provided you with a console that you can use to test your code. To enter a
 ### `Recipe`
 Build the following methods on the Recipe class
 
-- `Recipe.all`
-should return all of the recipe instances
-- `Recipe.most_popular`
-should return the recipe instance with the highest number of users (the recipe that has the most recipe cards)
-- `Recipe#users`
-should return the user instances who have recipe cards with this recipe
-- `Recipe#ingredients`
-should return all of the ingredients in this recipe
+<!-- - `Recipe.all`
+should return all of the recipe instances -->
+<!-- - `Recipe.most_popular`
+should return the recipe instance with the highest number of users (the recipe that has the most recipe cards) -->
+<!-- - `Recipe#users`
+should return the user instances who have recipe cards with this recipe -->
+<!-- - `Recipe#ingredients`
+should return all of the ingredients in this recipe -->
 - `Recipe#allergens`
 should return all of the `Ingredient`s in this recipe that are allergens for `User`s in our system.
-- `Recipe#add_ingredients`
-should take an array of ingredient instances as an argument, and associate each of those ingredients with this recipe
+<!-- - `Recipe#add_ingredients`
+should take an array of ingredient instances as an argument, and associate each of those ingredients with this recipe -->
 
 ### `Allergy`
 An Allergy is a join between a user and an ingredient.  This is a has-many-through relationship.  What methods should an instance of this model respond to?
@@ -66,8 +66,8 @@ should return the recipe to which the entry belongs
 ### `Ingredient`
 Build the following methods on the Ingredient class
 
-- `Ingredient.all`
-should return all of the ingredient instances
+<!-- - `Ingredient.all`
+should return all of the ingredient instances -->
 - `Ingredient.most_common_allergen`
 should return the ingredient instance that the highest number of users are allergic to
 
