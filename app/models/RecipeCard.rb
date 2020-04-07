@@ -1,15 +1,15 @@
-# require 'pry'
+require 'pry'
+require 'date'
 
 class RecipeCard
 
-    attr_accessor :user, :recipe, :date, :rating
-    attr_reader
+    attr_reader :user, :recipe, :date, :rating
     @@all = []
 
-    def initialize(user, recipe, date, rating)
+    def initialize(user, recipe, rating)
         @user = user
         @recipe = recipe
-        @date = date
+        @date = Date.today
         @rating = rating
         @@all << self
     end

@@ -1,26 +1,71 @@
 require_relative '../config/environment.rb'
 
-ingredient1 = Ingredient.new("flour")
-ingredient2 = Ingredient.new("sugar")
-ingredient3 = Ingredient.new("butter")
-ingredient4 = Ingredient.new("rice")
-ingredient5 = Ingredient.new("chips")
-ingredient6 = Ingredient.new("eggs")
-ingredient7 = Ingredient.new("shoes")
+# Create Users #
+princeton = User.new('Princeton')
+maddie = User.new('Maddie')
 
-recipe1 = Recipe.new("cookies", [ingredient2, ingredient4, ingredient6])
-recipe2 = Recipe.new("pasta", [ingredient2, ingredient3, ingredient4])
+wendy = User.new('Wendy')
+moxxie = User.new('Moxxie')
+brandon = User.new('Brandon')
+geoffrey = User.new('Geoffrey')
+gustave = User.new('Gustave')
+robert = User.new('Robert')
+cory = User.new('Cory')
 
-user1 = User.new("Moxxie")
-user2 = User.new("Rob")
+# Create Ingredients #
+peanut_butter = Ingredient.new('Peanut Butter')
+jelly = Ingredient.new('Jelly')
+bread = Ingredient.new('Bread')
+meatballs = Ingredient.new('Meatballs')
+spaghetti = Ingredient.new('Spaghetti')
+sauce = Ingredient.new('Sauce')
+fish = Ingredient.new('Fish')
+rice = Ingredient.new('Rice')
+meat_patty = Ingredient.new('Meat Patty')
+corn = Ingredient.new('Corn')
+steak = Ingredient.new('Steak')
+lettuce = Ingredient.new('Lettuce')
+tomatoes = Ingredient.new('Tomatoes')
 
-allergy1 = Allergy.new(user1, [ ingredient1, ingredient2, ingredient7])
-allergy2 = Allergy.new(user2, [ ingredient2, ingredient3, ingredient6])
+# Create Recipes #
+recipe1 = Recipe.new('Spaghetti and Meatballs', princeton)
+recipe2 = Recipe.new('Peanut Butter & Jelly Sandwhich', maddie)
+recipe3 = Recipe.new('Hamburgers', cory)
+recipe4 = Recipe.new('Steak Dinner', robert)
 
-card1 = RecipeCard.new(user1, recipe1, "Feb. 10", 1)
-card2 = RecipeCard.new(user2, recipe1, "Jan 11", 5)
-card3 = RecipeCard.new(user1, recipe2, "Mar 1", 10)
+# Add ingredients to recipes #
+RecipeIngredient.new(recipe1, spaghetti)
+RecipeIngredient.new(recipe1, meatballs)
+RecipeIngredient.new(recipe1, sauce)
 
+RecipeIngredient.new(recipe2, peanut_butter)
+RecipeIngredient.new(recipe2, jelly)
+RecipeIngredient.new(recipe2, bread)
 
+RecipeIngredient.new(recipe3, bread)
+RecipeIngredient.new(recipe3, meat_patty)
+RecipeIngredient.new(recipe3, lettuce)
+RecipeIngredient.new(recipe3, tomatoes)
+RecipeIngredient.new(recipe3, sauce)
+
+RecipeIngredient.new(recipe4, rice)
+RecipeIngredient.new(recipe4, steak)
+RecipeIngredient.new(recipe4, sauce)
+RecipeIngredient.new(recipe4, corn)
+
+# Add allergies to users #
+Allergy.new(fish, princeton)
+Allergy.new(bread, maddie)
+10.times do
+    Allergy.new(Ingredient.all.sample, User.all.sample)
+end
+
+# Add recipe cards #
+RecipeCard.new(recipe2, princeton, 1)
+RecipeCard.new(recipe2, maddie, 5)
+RecipeCard.new(recipe3, princeton, 10)
+10.times do
+    RecipeCard.new(Recipe.all.sample, User.all.sample, rand(1..10))
+end
 
 binding.pry
